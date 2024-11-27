@@ -54,9 +54,6 @@ This program was written as part of the curriculum for Holberton School. Holbert
 .
 
 <a href="https://www.holbertonschool.com/">
-    <img src="[def]" alt="Company Logo">
+    <img src="C:\Users\user\Desktop\logo.png" alt="Company Logo">
 </a>
 
-
-
-[def]: :\Users\user\Desktop\logo.png
