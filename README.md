@@ -42,7 +42,7 @@ Upon successful return, _printf returns the number of characters printed (exclud
 # Format of the Argument String
 
 # Authors ✒️
-Ichraq Najjar <a href="https://github.com/Ichnajj/">ichnajj</a> /n
+Ichraq Najjar <a href="https://github.com/Ichnajj/">ichnajj</a> <br>
 Haider Saidy  <a href="https://github.com/haidersaidy/">haidersaidy</a>
 
 # Acknowledgements 🙏
