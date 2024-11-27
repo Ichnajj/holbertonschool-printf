@@ -34,7 +34,7 @@ The _printf function was coded on an Ubuntu 24.04.1 LTS machine with gcc version
 <ul>
  <li>  GCC (GNU Compiler Collection).</li>
  <li> A C development environment (e.g., Linux or macOS terminal, or Windows with WSL).</li>
-<ul>
+</ul>
 
 <h3>Steps to Install</h3>
 Clone the repository:
