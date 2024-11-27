@@ -24,7 +24,7 @@ Supports the following format specifiers:
  <li> %s: Print a string.</li>
  <li> %%: Print a literal percent sign.</li>
  <li> Returns the number of characters printed (excluding the null byte).</li>
-<ul>
+</ul>
 
 # Dependencies 👫
 The _printf function was coded on an Ubuntu 24.04.1 LTS machine with gcc version 13.2.0.
