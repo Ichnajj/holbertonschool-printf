@@ -42,8 +42,8 @@ Upon successful return, _printf returns the number of characters printed (exclud
 # Format of the Argument String
 
 # Authors ✒️
-Brennan D Baraban <bdbaraban>
-Michael Klein <mKleinCreative>
+Ichraq Najjar <a href="https://github.com/Ichnajj/">ichnajj</a>
+Haider Saidy  <a href="https://github.com/haidersaidy/">haidersaidy</a>
 License 🔒
 This project is licensed under the MIT License - see the LICENSE file for details.
 
