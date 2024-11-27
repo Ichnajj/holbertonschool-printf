@@ -20,8 +20,9 @@ This project provides a custom implementation of the standard C library function
  Implements a custom version of the printf function.
 Supports the following format specifiers:
  <ul>
- <li>  %c: Print a character.</li>
- <li> %s: Print a string.</li>
+ <li> %c: Print a character.</li>
+ <li> %s: Print a string.</li> 
+ <li> %d and %i - Prints integers.</li>
  <li> %%: Print a literal percent sign.</li>
  <li> Returns the number of characters printed (excluding the null byte).</li>
 </ul>
@@ -83,6 +84,7 @@ The custom _printf function supports the following format specifiers:
 
 %c: Prints a single character.</br>
 %s: Prints a string.</br>
+%d and %i - Prints integers.</br>
 %%: Prints a literal percent sign.</br>
 The function will return the total number of characters printed (excluding the null byte used to end the string). The return value can be used to display or log the number of characters printed.
 
