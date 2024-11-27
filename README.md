@@ -10,7 +10,7 @@ This project provides a custom implementation of the standard C library function
  <li> Usage </li>
  <li> Functionality </li>
  <li> Description </li>
-  <li> Return Value </li>
+ <li> Return Value </li>
  <li> Authors </li>
  <li> Acknowledgements</li>
 
@@ -38,8 +38,9 @@ The _printf function was coded on an Ubuntu 24.04.1 LTS machine with gcc version
 
 <h3>Steps to Install</h3>
 Clone the repository:
+
 bash
-Copier le code
+Copier le code 
 git clone https://github.com/your-username/holbertonschool-printf.git
 
 Change into the project directory:
