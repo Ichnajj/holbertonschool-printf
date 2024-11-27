@@ -116,6 +116,6 @@ This program was written as part of the curriculum for Holberton School. Holbert
 .
 
 <a href="https://www.holbertonschool.com/">
-    <img style =" height: auto; width: 200px; " src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg" alt="Holberton School">
+    <img style =" height: 20px ; width: 20px; " src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg" alt="Holberton School">
 </a>
 
