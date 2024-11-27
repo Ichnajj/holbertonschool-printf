@@ -116,6 +116,6 @@ This program was written as part of the curriculum for Holberton School. Holbert
 .
 
 <a href="https://www.holbertonschool.com/">
-    <img src="https://images.app.goo.gl/WxxVNsggvFHnqdv17" alt="Company Logo">
+    <img src="https://images.app.goo.gl/WxxVNsggvFHnqdv17" alt="">
 </a>
 
