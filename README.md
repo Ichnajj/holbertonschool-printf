@@ -60,8 +60,9 @@ Now the project is ready for use! The compiled program is named my_printf.
 # Usage 🏃
 To use the custom _printf function in your project, simply include the appropriate header and call the function as you would with the standard printf. Below is an example of how to use _printf:
 
-c
+
 Copier le code
+
 #include "main.h"
 
 int main(void)
@@ -76,20 +77,21 @@ int main(void)
 
     return 0;
 }
+
 In this example, _printf is used to print a string and the program outputs the number of characters printed.
 
 # Functionality
 The custom _printf function supports the following format specifiers:
 
-%c: Prints a single character.
-%s: Prints a string.
-%%: Prints a literal percent sign.
+%c: Prints a single character.</br>
+%s: Prints a string.</br>
+%%: Prints a literal percent sign.</br>
 The function will return the total number of characters printed (excluding the null byte used to end the string). The return value can be used to display or log the number of characters printed.
 
 Example of Output:
 bash
 Copier le code
-Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.</br>
 Printed 42 characters.
 
 # Description 💬
