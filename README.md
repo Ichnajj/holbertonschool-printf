@@ -38,7 +38,6 @@ The _printf function was coded on an Ubuntu 24.04.1 LTS machine with gcc version
 
 <h3>Steps to Install</h3>
 Clone the repository:
-
 bash
 Copier le code
 git clone https://github.com/your-username/holbertonschool-printf.git
@@ -60,9 +59,7 @@ Now the project is ready for use! The compiled program is named my_printf.
 # Usage 🏃
 To use the custom _printf function in your project, simply include the appropriate header and call the function as you would with the standard printf. Below is an example of how to use _printf:
 
-
 Copier le code
-
 #include "main.h"
 
 int main(void)
