@@ -24,30 +24,19 @@ return (-1);
 }
 else if (format[i + 1] == '%')
 {
-len += _putchar('%');
-i++;
+print_percent(format[i]);
 }
 else if (format[i + 1] == 'c')
 {
-func = print_c;
-len += func(args);
-i++;
+print_c(format[i]);
 }
 else if (format[i + 1] == 's')
 {
-func = print_s;
-len += func(args);
-i++;
+print_s(format[i]);
 }
 else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 {
-func = print_int;
-len += func(args);
-i++;
-}
-else
-{
-len += _putchar('%');
+print_int(format[i]);
 }
 }
 else

@@ -13,7 +13,6 @@ This project provides a custom implementation of the standard C library function
  <li> Return Value </li>
  <li> Authors </li>
  <li> Acknowledgements</li>
-
 </ul>
 
 # Features
