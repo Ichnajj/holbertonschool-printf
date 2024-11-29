@@ -1,57 +1,75 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
 /**
 * _printf - Custom printf function that handles format specifiers.
-* @format: The format string containing the characters and specifiers.
+* @format: The format string.
 *
-* Return: The number of characters printed (excluding null byte).
+* Return: The number of characters printed.
 */
 int _printf(const char *format, ...)
 {
-	specifier_t spec_table[] = {
-		{'c', print_c},
-		{'s', print_s},
-		{'i', print_int},
-		{'d', print_int},
-		{'%', print_percent},
-		{0, NULL}
-	};
-	va_list args;
-	int i = 0, len = 0;
+    va_list args;
+    int len = 0;
+    int i = 0;
+    int (*func)(va_list);
 
-if (format == NULL) {
-		return (-1);
-	}
-	va_start(args, format);
+    // Check if the format string is NULL
+    if (format == NULL)
+        return (-1);
 
-	while (format && format[i])
-	{
-		if (format[i] == '%' && format[i + 1])
-		{
-			int j = 0;
+    va_start(args, format);
 
-			while (spec_table[j].spec != 0)
-			{
-				if (spec_table[j].spec == format[i + 1])
-				{
-					len += spec_table[j].func(args);
-					break;
-				}
-				j++;
-			}
-			if (spec_table[j].spec == 0)
-				len += _putchar('%');
-			i++;
-		}
-		else
-		{
-			len += _putchar(format[i]);
-		}
-		i++;
-	}
+    // Loop through the format string
+    while (format[i] != '\0')
+    {
+        if (format[i] == '%')
+        {
+            // If '%' is followed by another '%', print '%' and continue
+            if (format[i + 1] == '%')
+            {
+                len += _putchar('%');
+                i++;  // Skip the next '%' character
+            }
+            // Handle other format specifiers
+            else if (format[i + 1] == 'c')
+            {
+                func = print_c;
+                len += func(args);
+                i++;
+            }
+            else if (format[i + 1] == 's')
+            {
+                func = print_s;
+                len += func(args);
+                i++;
+            }
+            else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+            {
+                func = print_int;
+                len += func(args);
+                i++;
+            }
+            else if (format[i + 1] == '%')
+            {
+                len += _putchar('%');
+            }
+            else
+            {
+                // If no valid format specifier follows '%', treat it as an error
+                len += _putchar('%');
+            }
+        }
+        else
+        {
+            // Otherwise print the current character
+            len += _putchar(format[i]);
+        }
+        i++;
+    }
 
-	va_end(args);
-	return (len);
+    va_end(args);
+
+    return (len);
 }
+
