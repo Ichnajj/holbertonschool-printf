@@ -9,10 +9,28 @@
 */
 int print_c(va_list args)
 {
-    char c = va_arg(args, int);
-    return (_putchar(c));
+	char c = va_arg(args, int);
+
+	return (_putchar(c));
 }
 
+/**
+* print_number - Helper function to print numbers.
+* @n: The number to print.
+*
+* Return: The number of characters printed.
+*/
+int print_number( n)
+{
+	int len = 0;
+
+if (n == INT_MIN)
+	{
+		len += _putchar('-');
+		len += _putchar('2');
+		n = 147483648;
+	}
+}
 /**
 * print_s - Prints a string.
 * @args: The arguments list containing the string to print.
@@ -21,20 +39,21 @@ int print_c(va_list args)
 */
 int print_s(va_list args)
 {
-    char *str = va_arg(args, char *);
-    int len = 0;
+	char *str = va_arg(args, char *);
 
-    if (str == NULL)
-    {
-        str = "(null)";
-    }
+	int len = 0;
 
-    while (str[len])
-    {
-        _putchar(str[len]);
-        len++;
-    }
-    return (len);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
+	while (str[len])
+	{
+		_putchar(str[len]);
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -45,8 +64,9 @@ int print_s(va_list args)
 */
 int print_int(va_list args)
 {
-    int num = va_arg(args, int);
-    return (print_number(num));
+	int num = va_arg(args, int);
+
+	return (print_number(num));
 }
 
 /**
@@ -57,8 +77,8 @@ int print_int(va_list args)
 */
 int print_percent(va_list args)
 {
-    (void)args;
-    return (_putchar('%'));
+	(void)args;
+	return (_putchar('%'));
 }
 
 /**
@@ -69,24 +89,24 @@ int print_percent(va_list args)
 */
 int print_number(int n)
 {
-    int len = 0;
+	int len = 0;
 
-    /* Special case for 0 */
-    if (n == 0)
-    {
-        len += _putchar('0');
-        return (len);
-    }
+	/* Special case for 0 */
+	if (n == 0)
+	{
+		len += _putchar('0');
+		return (len);
+	}
 
-    /* Handle negative numbers */
-    if (n < 0)
-    {
-        len += _putchar('-');
-        n = -n;
-    }
+	/* Handle negative numbers */
+	if (n < 0)
+	{
+		len += _putchar('-');
+		n = -n;
+	}
 
-    len += print_int_helper(n);
-    return (len);
+	len += print_int_helper(n);
+	return (len);
 }
 
 /**
@@ -97,13 +117,13 @@ int print_number(int n)
 */
 int print_int_helper(int n)
 {
-    int len = 0;
+	int len = 0;
 
-    /* Recursively print each digit */
-    if (n / 10 != 0)
-    {
-        len += print_int_helper(n / 10);
-    }
-    len += _putchar((n % 10) + '0');
-    return (len);
+	/* Recursively print each digit */
+	if (n / 10 != 0)
+	{
+		len += print_int_helper(n / 10);
+	}
+	len += _putchar((n % 10) + '0');
+	return (len);
 }
