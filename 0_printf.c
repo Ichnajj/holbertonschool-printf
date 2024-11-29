@@ -14,24 +14,20 @@ int _printf(const char *format, ...)
     int i = 0;
     int (*func)(va_list);
 
-    // Check if the format string is NULL
     if (format == NULL)
         return (-1);
 
     va_start(args, format);
 
-    // Loop through the format string
     while (format[i] != '\0')
     {
         if (format[i] == '%')
         {
-            // If '%' is followed by another '%', print '%' and continue
             if (format[i + 1] == '%')
             {
                 len += _putchar('%');
-                i++;  // Skip the next '%' character
+                i++;  
             }
-            // Handle other format specifiers
             else if (format[i + 1] == 'c')
             {
                 func = print_c;
@@ -56,13 +52,11 @@ int _printf(const char *format, ...)
             }
             else
             {
-                // If no valid format specifier follows '%', treat it as an error
                 len += _putchar('%');
             }
         }
         else
         {
-            // Otherwise print the current character
             len += _putchar(format[i]);
         }
         i++;
