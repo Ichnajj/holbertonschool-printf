@@ -9,61 +9,59 @@
 */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int len = 0;
-    int i = 0;
-    int (*func)(va_list);
+	va_list args;
+	int len = 0;
 
-    if (format == NULL)
-        return (-1);
+	int i = 0;
 
-    va_start(args, format);
+	int (*func)(va_list);
+	if (format == NULL)
+		return (-1);
 
-    while (format[i] != '\0')
-    {
-        if (format[i] == '%')
-        {
-            if (format[i + 1] == '%')
-            {
-                len += _putchar('%');
-                i++;  
-            }
-            else if (format[i + 1] == 'c')
-            {
-                func = print_c;
-                len += func(args);
-                i++;
-            }
-            else if (format[i + 1] == 's')
-            {
-                func = print_s;
-                len += func(args);
-                i++;
-            }
-            else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-            {
-                func = print_int;
-                len += func(args);
-                i++;
-            }
-            else if (format[i + 1] == '%')
-            {
-                len += _putchar('%');
-            }
-            else
-            {
-                len += _putchar('%');
-            }
-        }
-        else
-        {
-            len += _putchar(format[i]);
-        }
-        i++;
-    }
-
-    va_end(args);
-
-    return (len);
+	va_start(args, format);
+	while (format[i] != '\0')
+	{
+		 if (format[i] == '%')
+		{
+			if (format[i + 1] == '%')
+			{
+				len += _putchar('%');
+				i++;
+			}
+			else if (format[i + 1] == 'c')
+			{
+				func = print_c;
+				len += func(args);
+				i++;
+			}
+			else if (format[i + 1] == 's')
+			{
+				func = print_s;
+				len += func(args);
+				i++;
+			}
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+			{
+				func = print_int;
+				len += func(args);
+				i++;
+			}
+			else if (format[i + 1] == '%')
+			{
+				len += _putchar('%');
+			}
+			else
+			{
+				len += _putchar('%');
+			}
+		}
+		else
+		{
+			len += _putchar(format[i]);
+		}
+		i++;
+	}
+	va_end(args);
+	return (len);
 }
 
