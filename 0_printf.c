@@ -13,46 +13,43 @@ int _printf(const char *format, ...)
 	int len = 0;
 	int i = 0;
 	int (*func)(va_list);
-	/* Check for NULL format string */
 	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
 
-    /* Process the format string */
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			/* Check if the next character is a valid format specifier */
-			if (format[i + 1] == '\0')  /* If '%' is the last character */
+			if (format[i + 1] == '\0')  
 			{
 				return (-1);
 			}
-			else if (format[i + 1] == '%')  /* Handle '%%' */
+			else if (format[i + 1] == '%')  
 			{
 				len += _putchar('%');
-				i++;  /* Skip over the '%' */
+				i++;
 			}
-			else if (format[i + 1] == 'c')  /* Handle character */
+			else if (format[i + 1] == 'c') 
 			{
 				func = print_c;
 				len += func(args);
-				i++;  /* Skip over the 'c' */
+				i++;
 			}
-			else if (format[i + 1] == 's')  /* Handle string */
+			else if (format[i + 1] == 's') 
 			{
 				func = print_s;
 				len += func(args);
-				i++;  /* Skip over the 's' */
+				i++; 
 			}
-			else if (format[i + 1] == 'd' || format[i + 1] == 'i')  /* Handle integer */
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i') 
 			{
 				func = print_int;
 				len += func(args);
-				i++;  /* Skip over 'd' or 'i' */
+				i++; 
 			}
-			else  /* Handle invalid format specifier */
+			else  
 			{
 				len += _putchar('%');
 			}
@@ -61,7 +58,7 @@ int _printf(const char *format, ...)
 		{
 			len += _putchar(format[i]);
 		}
-		i++;  /* Move to the next character */
+		i++;  
 	}
 	va_end(args);
 	return (len);
