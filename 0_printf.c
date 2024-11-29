@@ -52,6 +52,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (len);
 	if (format == NULL) {
-		return (0);
+		return (-1);
 	}
 }
