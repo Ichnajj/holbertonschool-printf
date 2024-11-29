@@ -15,23 +15,6 @@ int print_c(va_list args)
 }
 
 /**
-* print_number - Helper function to print numbers.
-* @n: The number to print.
-*
-* Return: The number of characters printed.
-*/
-int print_number( n)
-{
-	int len = 0;
-
-if (n == INT_MIN)
-	{
-		len += _putchar('-');
-		len += _putchar('2');
-		n = 147483648;
-	}
-}
-/**
 * print_s - Prints a string.
 * @args: The arguments list containing the string to print.
 *
