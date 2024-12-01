@@ -24,28 +24,37 @@ return (-1);
 }
 else if (format[i + 1] == '%')
 {
-print_percent(format[i]);
+len += _putchar('%');
+i++;
 }
 else if (format[i + 1] == 'c')
 {
-print_c(format[i]);
+func = print_c;
+len += func(args);
+i++;
 }
 else if (format[i + 1] == 's')
 {
-print_s(format[i]);
+func = print_s;
+len += func(args);
+i++;
 }
 else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 {
-print_int(format[i]);
-}
+func = print_int;
+len += func(args);
+i++;
 }
 else
 {
-len += _putchar(format[i]);
+len += _putchar('%');
+}
+}
+else
+{len += _putchar(format[i]);
 }
 i++;
 }
 va_end(args);
 return (len);
 }
-
